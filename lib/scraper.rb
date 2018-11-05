@@ -13,6 +13,7 @@ class Scraper
       students_hash[:name] = student.css(".student-name").text
       students_hash[:location] = student.css(".student-location").text
       students_hash[:profile_url] = student.css("a").attribute("href").value
+      students_hash
       # students_array << students_hash
     end
     binding.pry
