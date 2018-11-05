@@ -9,12 +9,11 @@ class Scraper
     students_array = []
     students_hash = {}
 
-    index_page.css(".student-card").map do |student|
+    index_page.css(".student-card").each do |student|
       students_hash[:name] = student.css(".student-name").text
       students_hash[:location] = student.css(".student-location").text
       students_hash[:profile_url] = student.css("a").attribute("href").value
-      students_hash
-      # students_array << students_hash
+      students_array << students_hash
     end
     binding.pry
 
